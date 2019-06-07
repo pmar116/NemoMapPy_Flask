@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $('form').submit(function (e) {
+        $('#overlay').show();
         $.ajax({
             type: "POST",
             url: "/senddata",
@@ -9,6 +10,7 @@ $(document).ready(function() {
                 console.log(data)
                 $('#map').text(data[0].mappings).show()
                 $('#time').text(data[1].runtime).show()
+                $('#overlay').hide();
             }
         });
         e.preventDefault(); // block the traditional submission of the form.

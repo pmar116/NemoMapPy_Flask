@@ -30,9 +30,16 @@
                 <script src="{{ url_for('static', filename='getdata.js') }}"></script>
                 <div class="results">
                     <span>Number of Mappings: </span><span id="map"></span><br>
-                    <span>Run time: </span><span id="time"></span>
+                    <span>Run time in seconds: </span><span id="time"></span>
+                </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div id="overlay" >
+        <div id="loadinggif">
+            <img src="static/ajax-loader.gif"/>
         </div>
     </div>
 
