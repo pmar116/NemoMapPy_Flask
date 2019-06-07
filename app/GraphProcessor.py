@@ -23,10 +23,10 @@ class GraphProcessor:
         edgeList = []
         for line in grapharray:
             #print(line, file=sys.stderr)
-            if "#" not in line:     #catch comments
-                pair = [int(i) for i in line.split()]   #read in as integers
-                if pair[0] != pair[1]:
-                    edgeList.append(pair)
-
+            if line:
+                if "#" not in line:     #catch comments
+                    pair = [int(i) for i in line.split()]   #read in as integers
+                    if pair[0] != pair[1]:
+                        edgeList.append(pair)
         newGraph = Graph(edgeList)
         return newGraph

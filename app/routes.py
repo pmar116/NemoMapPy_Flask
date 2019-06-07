@@ -28,8 +28,9 @@ def senddata():
 
         resultdata=nmp(inputGraph, queryGraph)
         #convert to json
-        #jsonstr=json.dumps(resultdata)
-        return jsonify(data=resultdata)
+        jsonstr=json.dumps(resultdata)
+        #return jsonify(data=resultdata)
+        return jsonstr
     return jsonify(data=form.errors)
 
 

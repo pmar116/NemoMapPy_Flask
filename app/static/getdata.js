@@ -7,7 +7,8 @@ $(document).ready(function() {
             dataType: 'json',
             success: function (data) {
                 console.log(data)
-                $('#map').text(data['mappings'])
+                $('#map').text(data[0].mappings).show()
+                $('#time').text(data[1].runtime).show()
             }
         });
         e.preventDefault(); // block the traditional submission of the form.

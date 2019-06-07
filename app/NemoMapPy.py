@@ -25,5 +25,8 @@ def nmp(inputg, queryg):
     print("\nMapping: %d" % totalMappings)
     print("Time taken: %s seconds\n" % (timeEnd-timeStart))
 
-    data={"mappings":totalMappings, "runtime":(timeEnd-timeStart)}
+    #data={"mappings":totalMappings, "runtime":(timeEnd-timeStart)}
+    data=[]
+    data.append({"mappings":totalMappings})
+    data.append({"runtime":(timeEnd-timeStart)})
     return data
