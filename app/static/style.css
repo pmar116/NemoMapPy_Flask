@@ -1,0 +1,42 @@
+body{
+    background-color: rgb(192, 8, 192);
+}
+
+.headerdiv{
+    text-align: center;
+    padding: 25px;
+    background-color: purple;
+}
+
+.headerdiv h1{
+    color: black;
+}
+
+.getgraphs{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.graphs{
+    margin: 10px;
+}
+
+.container{
+    margin-top: 20px;
+    border-radius: 25px;
+    padding: 20px;  
+    background-color: rgb(184, 141, 201);
+}
+
+.results{
+    background: white;
+    padding: 10px;
+}
+
+.inputheader{
+    font-size: 25px;
+}
+.lasthead{
+    padding-top: 10px;
+}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <form class="getgraphs" action="/index" method="post">
+                    {{ form.hidden_tag() }}
+                    <p class="graphs">
+                        {{ form.inputGraph.label(class="inputheader") }}<br>
+                        {{ form.inputGraph(cols=30, rows=15) }}<br>
+                        {% for error in form.inputGraph.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </p>
+                    <p class="graphs">
+                        {{ form.queryGraph.label(class="inputheader") }}<br>
+                        {{ form.queryGraph(cols=30, rows=15) }}<br>
+                        {% for error in form.queryGraph.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </p>
+                    <p>{{ form.submit() }}</p>
+                </form>
+            </div>
+            <div class="col-sm">
+                <p class="inputheader lasthead">
+                    Results
+                </p>
+                <script src="{{ url_for('static', filename='getdata.js') }}"></script>
+                <div class="results">
+                    <span id="map">Number of Mappings: </span><br>
+                    <span id="time">Run time: </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
