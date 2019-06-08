@@ -1,1 +1,1 @@
-web: gunicorn nmp_app:app
+web: gunicorn -w 1 app:app
