@@ -1,1 +1,1 @@
-web: gunicorn nmp_app:app
+web: python __init__.py
