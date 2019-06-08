@@ -23,5 +23,3 @@ app.logger.info('nemomappy startup')
 
 from app import routes
 
-if __name__ == '__main__':
-        app.run()
