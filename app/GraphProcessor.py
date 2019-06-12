@@ -30,3 +30,20 @@ class GraphProcessor:
                         edgeList.append(pair)
         newGraph = Graph(edgeList)
         return newGraph
+
+    def loadGraphFile(self, fileName):
+        """
+        loadGraph: reads edges from a text file and stores the values in a 2D list
+        :param fileName:string The name f the file containing the graph edges
+        :return: Graph - A graph containing the edges from the file
+        """
+        edgeList = []
+        with open(fileName) as myFile:
+            for line in grapharray:
+                if line:
+                    if "#" not in line:     #catch comments
+                        pair = [int(i) for i in line.split()]   #read in as integers
+                        if pair[0] != pair[1]:
+                            edgeList.append(pair)
+            newGraph = Graph(edgeList)
+        return newGraph

@@ -1,5 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>test inputting Graphs</h1>
+    <h1>test file upload</h1>
+    <div class="container">
+        <form class='getfiles' method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <p class="files">
+                {{ form.getInput.label }}<br>
+                {{ form.getInput }}<br>
+                {% for error in form.getInput.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p class="files">
+                {{ form.getQuery.label }}<br>
+                {{ form.getQuery }}<br>
+                {% for error in form.getQuery.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </p>
+            <p>{{ form.submit }}</p>
+        </form>
+    </div>
 {% endblock %}
