@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileRequired, FileAllowed
-from flask_uploads import UploadSet
-from wtforms import SubmitField, TextAreaField
+from flask_uploads import TEXT
+from wtforms import SubmitField, TextAreaField, validators
 from wtforms.validators import ValidationError, DataRequired
 
 class getGraphs(FlaskForm):
@@ -10,8 +10,6 @@ class getGraphs(FlaskForm):
     submit = SubmitField("Run NemoMapPy")
 
 class getFiles(FlaskForm):
-    #ensureText = UploadSet('text', 'txt')
-    #FileAllowed(ensureText, u"Text Files Only!")
-    getInput = FileField("Input File", validators=[FileRequired()])
-    getQuery = FileField("Query File", validators=[FileRequired()])
+    getInput = FileField("Input File", validators=[FileRequired(), FileAllowed(TEXT, "Must be Text Files")])
+    getQuery = FileField("Query File", validators=[FileRequired(), FileAllowed(TEXT, "Must be Text Files")])
     submit = SubmitField("Send Files")

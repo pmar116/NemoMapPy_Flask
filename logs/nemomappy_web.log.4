@@ -1,0 +1,91 @@
+2019-06-11 19:23:13,445 INFO: NemoMapPy startup [in D:\Preston\Documents\PythonProjects\Web Development\Flask_capstone\app\__init__.py:25]
+2019-07-11 14:04:22,338 INFO: NemoMapPy startup [in D:\Preston\Documents\PythonProjects\Web Development\Flask_capstone\app\__init__.py:25]
+2019-07-19 10:32:09,846 INFO: NemoMapPy startup [in D:\Preston\Documents\PythonProjects\Web Development\Flask_capstone\app\__init__.py:25]
+2019-07-19 10:56:00,973 ERROR: Exception on /test [POST] [in d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\Preston\Documents\PythonProjects\Web Development\Flask_capstone\app\routes.py", line 27, in test
+    resultdata=nmp(inputGraph, queryGraph)
+  File "D:\Preston\Documents\PythonProjects\Web Development\Flask_capstone\app\NemoMapPy.py", line 11, in nmp
+    inputGraph = myGP.loadGraph(inputg)
+  File "D:\Preston\Documents\PythonProjects\Web Development\Flask_capstone\app\GraphProcessor.py", line 28, in loadGraph
+    pair = [int(i) for i in line.split()]   #read in as integers
+  File "D:\Preston\Documents\PythonProjects\Web Development\Flask_capstone\app\GraphProcessor.py", line 28, in <listcomp>
+    pair = [int(i) for i in line.split()]   #read in as integers
+ValueError: invalid literal for int() with base 10: 'class'
+2019-07-20 13:14:54,835 INFO: NemoMapPy startup [in D:\Preston\Documents\PythonProjects\Web Development\Flask_capstone\app\__init__.py:25]
+2019-07-20 13:17:20,609 INFO: NemoMapPy startup [in D:\Preston\Documents\PythonProjects\Web Development\Flask_capstone\app\__init__.py:25]
+2019-07-20 13:17:34,569 INFO: NemoMapPy startup [in D:\Preston\Documents\PythonProjects\Web Development\Flask_capstone\app\__init__.py:25]
+2019-07-20 13:18:16,077 INFO: NemoMapPy startup [in D:\Preston\Documents\PythonProjects\Web Development\Flask_capstone\app\__init__.py:25]
+2019-07-20 13:19:43,439 INFO: NemoMapPy startup [in D:\Preston\Documents\PythonProjects\Web Development\Flask_capstone\app\__init__.py:25]
+2019-07-20 13:20:01,291 ERROR: Exception on /test [POST] [in d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\Preston\Documents\PythonProjects\Web Development\Flask_capstone\app\routes.py", line 18, in test
+    if form.validate_on_submit():
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask_wtf\form.py", line 101, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\wtforms\form.py", line 310, in validate
+    return super(Form, self).validate(extra)
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\wtforms\form.py", line 152, in validate
+    if not field.validate(self, extra):
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\wtforms\fields\core.py", line 206, in validate
+    stop_validation = self._run_validation_chain(form, chain)
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\wtforms\fields\core.py", line 226, in _run_validation_chain
+    validator(form, self)
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\wtforms\validators.py", line 273, in __call__
+    match = self.regex.match(field.data or '')
+TypeError: expected string or bytes-like object
+2019-07-20 13:23:07,388 INFO: NemoMapPy startup [in D:\Preston\Documents\PythonProjects\Web Development\Flask_capstone\app\__init__.py:25]
+2019-07-20 13:23:14,151 ERROR: Exception on /test [POST] [in d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask\app.py:1780]
+Traceback (most recent call last):
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\Preston\Documents\PythonProjects\Web Development\Flask_capstone\app\routes.py", line 18, in test
+    if form.validate_on_submit():
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\flask_wtf\form.py", line 101, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\wtforms\form.py", line 310, in validate
+    return super(Form, self).validate(extra)
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\wtforms\form.py", line 152, in validate
+    if not field.validate(self, extra):
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\wtforms\fields\core.py", line 206, in validate
+    stop_validation = self._run_validation_chain(form, chain)
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\wtforms\fields\core.py", line 226, in _run_validation_chain
+    validator(form, self)
+  File "d:\preston\documents\pythonprojects\web development\flask_capstone\venv\lib\site-packages\wtforms\validators.py", line 273, in __call__
+    match = self.regex.match(field.data or '')
+TypeError: expected string or bytes-like object
+2019-07-20 13:25:12,062 INFO: NemoMapPy startup [in D:\Preston\Documents\PythonProjects\Web Development\Flask_capstone\app\__init__.py:25]
