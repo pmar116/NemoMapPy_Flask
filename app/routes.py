@@ -7,13 +7,18 @@ from app.forms import getGraphs, getFiles
 from app.parse import parsetoarray, parsetoarrayfromfile
 from app.NemoMapPy import nmp
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/nmp-text', methods=['GET', 'POST'])
 def index():
     form=getGraphs()
     return render_template('index.html', form=form)
 
-@app.route('/test', methods=['GET', 'POST'])
-def test():
+@app.route('/nmp-file', methods=['GET', 'POST'])
+def fileupload():
+    form=getFiles()
+    return render_template('fileupload.html', form=form)
+
+@app.route('/sendfiles', methods=['POST'])
+def sendfiles():
     form=getFiles()
     if form.validate_on_submit():
         inputFile = form.getInput.data
@@ -27,7 +32,9 @@ def test():
         resultdata=nmp(inputGraph, queryGraph)
         jsonstr=json.dumps(resultdata)
         return jsonstr
-    return render_template("test.html", form=form)
+    else:
+        print("Failed validation")
+    return jsonify(data=form.errors)
 
 @app.route('/senddata', methods=['POST'])
 def senddata():

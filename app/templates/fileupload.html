@@ -4,30 +4,30 @@
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <form class="getgraphs" action="/index" method="post">
+                <form class='getfiles' method="POST" enctype="multipart/form-data">
                     {{ form.hidden_tag() }}
-                    <p class="graphs">
-                        {{ form.inputGraph.label(class="inputheader") }}<br>
-                        {{ form.inputGraph(cols=30, rows=15) }}<br>
-                        {% for error in form.inputGraph.errors %}
-                        <span style="color: red;">[{{ error }}]</span>
+                    <p class="files">
+                        {{ form.getInput.label }}<br>
+                        {{ form.getInput }}<br>
+                        {% for error in form.getInput.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
                         {% endfor %}
                     </p>
-                    <p class="graphs">
-                        {{ form.queryGraph.label(class="inputheader") }}<br>
-                        {{ form.queryGraph(cols=30, rows=15) }}<br>
-                        {% for error in form.queryGraph.errors %}
-                        <span style="color: red;">[{{ error }}]</span>
+                    <p class="files">
+                        {{ form.getQuery.label }}<br>
+                        {{ form.getQuery }}<br>
+                        {% for error in form.getQuery.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
                         {% endfor %}
-                    </p>
-                    <p>{{ form.submit() }}</p>
+                        </p>
+                    <p>{{ form.submit }}</p>
                 </form>
             </div>
             <div class="col-sm">
                 <p class="inputheader lasthead">
                     Results
                 </p>
-                <script src="{{ url_for('static', filename='getdata.js') }}"></script>
+                <script src="{{ url_for('static', filename='getfile.js') }}"></script>
                 <div class="results">
                     <span>Number of Mappings: </span><span id="map"></span><br>
                     <span>Run time in seconds: </span><span id="time"></span>
@@ -36,7 +36,7 @@
             </div>
             <div class="row">
                 <div class="col text-center">
-                    <button onclick="window.location.href = '/nmp-file';">Try File Input</button>
+                    <button onclick="window.location.href = '/nmp-text';">Try Text Input</button>
                 </div>
             </div>
         </div>
