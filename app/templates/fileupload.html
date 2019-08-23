@@ -4,30 +4,27 @@
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <form class='getfiles' method="POST" enctype="multipart/form-data">
-                    {{ form.hidden_tag() }}
-                    <p class="files">
-                        {{ form.getInput.label }}<br>
-                        {{ form.getInput }}<br>
-                        {% for error in form.getInput.errors %}
-                            <span style="color: red;">[{{ error }}]</span>
-                        {% endfor %}
-                    </p>
-                    <p class="files">
-                        {{ form.getQuery.label }}<br>
-                        {{ form.getQuery }}<br>
-                        {% for error in form.getQuery.errors %}
-                            <span style="color: red;">[{{ error }}]</span>
-                        {% endfor %}
+                <script src="{{ url_for('static', filename='getfile.js') }}"></script>
+                <form id="upload-file" method="post" enctype="multipart/form-data">
+                    <dl>
+                        <p>
+                            <h3>Input Graph</h3>
+                            <input type="file" name="inputFile" autocomplete="off" required>
                         </p>
-                    <p>{{ form.submit }}</p>
+                        <p>
+                            <h3>Query Graph</h3>
+                            <input type="file" name="queryFile" autocomplete="off" required>
+                        </p>
+                    </dl>
+                    <p>
+                        <button id="upload-file-btn" type="button">Run NemoMap</button>
+                    </p>
                 </form>
             </div>
             <div class="col-sm">
                 <p class="inputheader lasthead">
                     Results
                 </p>
-                <script src="{{ url_for('static', filename='getfile.js') }}"></script>
                 <div class="results">
                     <span>Number of Mappings: </span><span id="map"></span><br>
                     <span>Run time in seconds: </span><span id="time"></span>

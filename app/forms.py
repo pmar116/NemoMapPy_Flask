@@ -10,6 +10,7 @@ class getGraphs(FlaskForm):
     submit = SubmitField("Run NemoMapPy")
 
 class getFiles(FlaskForm):
+    # FileAllowed(TEXT, "Must be Text Files")
     getInput = FileField("Input File", validators=[FileRequired(), FileAllowed(TEXT, "Must be Text Files")])
     getQuery = FileField("Query File", validators=[FileRequired(), FileAllowed(TEXT, "Must be Text Files")])
     submit = SubmitField("Send Files")

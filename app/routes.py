@@ -12,30 +12,6 @@ def index():
     form=getGraphs()
     return render_template('index.html', form=form)
 
-@app.route('/nmp-file', methods=['GET', 'POST'])
-def fileupload():
-    form=getFiles()
-    return render_template('fileupload.html', form=form)
-
-@app.route('/sendfiles', methods=['POST'])
-def sendfiles():
-    form=getFiles()
-    if form.validate_on_submit():
-        inputFile = form.getInput.data
-        queryFile = form.getQuery.data
-        
-        inputFile = inputFile.read()
-        inputGraph = parsetoarrayfromfile(str(inputFile))
-        queryFile = queryFile.read()
-        queryGraph = parsetoarrayfromfile(str(queryFile))
-
-        resultdata=nmp(inputGraph, queryGraph)
-        jsonstr=json.dumps(resultdata)
-        return jsonstr
-    else:
-        print("Failed validation")
-    return jsonify(data=form.errors)
-
 @app.route('/senddata', methods=['POST'])
 def senddata():
     form=getGraphs()
@@ -55,3 +31,31 @@ def senddata():
     return jsonify(data=form.errors)
 
 
+ALLOWED_EXTENSIONS = set(['txt'])
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
+
+@app.route('/nmp-file', methods=['GET', 'POST'])
+def fileupload():
+    return render_template('fileupload.html')
+
+@app.route('/uploadajax', methods=['GET', 'POST'])
+def uploadajax():
+    inputFile = request.files['inputFile']
+    queryFile = request.files['queryFile']
+
+    if inputFile.filename.lower().endswith('.txt') and queryFile.filename.lower().endswith('.txt'):
+        print('text file detected')
+        inputFile = inputFile.read()
+        inputGraph = parsetoarrayfromfile(str(inputFile))
+        queryFile = queryFile.read()
+        queryGraph = parsetoarrayfromfile(str(queryFile))
+        resultdata=nmp(inputGraph, queryGraph)
+        jsonstr=json.dumps(resultdata)
+        return jsonstr
+    else:
+        print('fake')
+        #flash stuff
+        return render_template('fileupload.html')
+    
