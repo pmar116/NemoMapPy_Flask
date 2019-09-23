@@ -55,7 +55,7 @@ def uploadajax():
         jsonstr=json.dumps(resultdata)
         return jsonstr
     else:
-        print('fake')
+        print('failed')
         #flash stuff
         return render_template('fileupload.html')
     

@@ -34,11 +34,33 @@
                 </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                    <a href="/nmp-file" class="btn btn-secondary btn-sm" role="button">Try File Input</a>
+            <div class="d-flex justify-content-between">
                     <div class="space"></div>
-                    <a href="http://bioresearch02p.uwb.edu/biores" class="btn btn-secondary btn-sm" role="button">Checkout NemoSuite</a>
-            </div>
+                    <div>
+                        <a href="/nmp-file" class="btn btn-secondary btn-sm" role="button">Try File Input</a>
+                        <a href="http://bioresearch02p.uwb.edu/biores" class="btn btn-secondary btn-sm" role="button">Checkout NemoSuite</a>
+                    </div>
+                    <div>
+                        <a class="btn" href="#popup1"><i class="far fa-question-circle fa-2x"></i></a>
+                        <div id="popup1" class="overlay">
+                            <div class="popup">
+                                <h2>How to use NemoMapPy</h2>
+                                <a class="close" href="#">×</a>
+                                <div class="content">
+                                    <h4>Input Graph</h4>
+                                    Write or paste the edge pairs (spaces or tabs accepted) of the input graph.<br>
+                                    The input graph is the graph that will be searched for the recurring sub-graph structure.
+                                    <h4>Query Graph</h4>
+                                    Write or paste the edge pairs (spaces or tabs accepted) of the query graph.<br>
+                                    The query graph is the sub-graph that is being checked for the number of occurrences within the input graph. 
+                                    <h4>Results</h4>
+                                    NemoMapPy will return the number of times the query graph was found within the input graph.<br>
+                                    It will also return the amount of time it took to run.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 
